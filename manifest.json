@@ -1,0 +1,9 @@
+{
+  "name":"FREE FIRE ANALYST",
+  "short_name":"FF Analyst",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#05070b",
+  "theme_color":"#05070b",
+  "icons":[]
+}

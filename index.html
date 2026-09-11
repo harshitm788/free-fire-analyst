@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05070b">
+<title>FREE FIRE ANALYST</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="splash" class="splash">
+  <div class="brand">FREE FIRE ANALYST</div>
+  <div class="made">MADE BY HARSHIT</div>
+</div>
+
+<header class="topbar">
+  <div><b>FREE FIRE ANALYST</b><span>PRO GAMEPLAY ANALYSIS</span></div>
+  <button id="logoutBtn" class="ghost hidden">Logout</button>
+</header>
+
+<main class="screen">
+<section id="auth" class="panel auth-panel">
+  <p class="eyebrow">PRIVATE PLAYER WORKSPACE</p>
+  <h1>Analyse. Learn. Improve.</h1>
+  <p class="muted">Store your matches, mark mistakes and generate evidence-based AI coaching.</p>
+  <input id="email" type="email" autocomplete="email" placeholder="Email">
+  <input id="password" type="password" autocomplete="current-password" placeholder="Password (6+ characters)">
+  <div class="row"><button id="signupBtn">Create account</button><button id="loginBtn" class="secondary">Login</button></div>
+  <small id="authMsg"></small>
+</section>
+
+<section id="app" class="hidden">
+<nav class="tabs">
+  <button data-tab="dashboard" class="active">Dashboard</button>
+  <button data-tab="upload">Upload</button>
+  <button data-tab="videos">My Videos</button>
+  <button data-tab="maps">Maps</button>
+</nav>
+
+<div id="dashboard" class="tab">
+  <div class="hero panel">
+    <div><p class="eyebrow">PLAYER WORKSPACE</p><h1>Your gameplay, your evidence.</h1>
+    <p class="muted">Open a match, inspect moments frame-by-frame, add circles/arrows/notes and request AI coaching.</p></div>
+    <button id="goUpload">Analyse a video</button>
+  </div>
+  <div class="stats">
+    <div class="panel"><b id="videoCount">0</b><span>Videos</span></div>
+    <div class="panel"><b id="noteCount">0</b><span>Saved marks</span></div>
+    <div class="panel"><b id="analysisCount">0</b><span>AI reports</span></div>
+  </div>
+</div>
+
+<div id="upload" class="tab hidden">
+  <div class="panel">
+    <h2>Upload gameplay</h2>
+    <p class="muted">Videos are stored privately in your Supabase account.</p>
+    <input id="videoFile" type="file" accept="video/*">
+    <input id="videoTitle" placeholder="Video title">
+    <button id="uploadBtn">Upload & open analyser</button>
+    <small id="uploadMsg"></small>
+  </div>
+</div>
+
+<div id="videos" class="tab hidden">
+  <div class="panel"><h2>My videos</h2><div id="videoList"></div></div>
+</div>
+
+<div id="maps" class="tab hidden">
+  <div class="panel">
+    <h2>Maps</h2>
+    <p class="muted">The app includes a configurable map viewer. Add map image URLs that you have permission to use in <code>MAPS</code> in <code>app.js</code>.</p>
+    <select id="mapSelect"></select>
+    <div class="mapbox"><img id="mapImage" alt="Selected map"></div>
+    <div class="row"><button id="mapMinus">−</button><button id="mapReset" class="secondary">Reset</button><button id="mapPlus">+</button></div>
+    <small id="mapMsg"></small>
+  </div>
+</div>
+
+<div id="analyser" class="tab hidden">
+  <button id="backVideos" class="ghost">← My videos</button>
+  <div class="panel">
+    <div class="analyser-head"><div><p class="eyebrow">MATCH REVIEW</p><h2 id="analyserTitle">Video analyser</h2></div><span id="timeBadge">0.0s</span></div>
+    <div class="playerWrap">
+      <video id="player" controls playsinline></video>
+      <canvas id="overlay"></canvas>
+    </div>
+    <div class="toolbar">
+      <button data-tool="select" class="active">Select</button>
+      <button data-tool="circle">Circle</button>
+      <button data-tool="arrow">Arrow</button>
+      <button data-tool="draw">Draw</button>
+      <button data-tool="note">Note</button>
+      <button id="zoomOut">−</button><button id="zoomIn">+</button>
+    </div>
+    <div class="row">
+      <button id="saveMark">Save current mark</button>
+      <button id="aiBtn" class="secondary">AI coach analysis</button>
+    </div>
+    <small id="analysisMsg"></small>
+  </div>
+  <div class="panel"><h3>Saved evidence</h3><div id="annotations"></div></div>
+  <div class="panel"><h3>AI report</h3><pre id="aiReport" class="report">No AI report yet.</pre></div>
+</div>
+</section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
