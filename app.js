@@ -1,7 +1,7 @@
 // ================= CONFIG =================
 // Put the values from Supabase > Project Settings > API here.
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+https://.....supabase.co
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRnZndlaXpodWJzb2phdWljZ2N1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxMzg1NjAsImV4cCI6MjEwNDcxNDU2MH0.WalXeQrQFQToNVf6RHlbESnyBcHmkJR1c0hky9FMXz8
 
 // Add map images that you have permission to use.
 // Example: {name:"Bermuda",url:"https://your-domain.example/bermuda.jpg"}
